@@ -2,13 +2,11 @@
 session_start();
 include_once("../pristup.php");
 
-if(loginAdmin()){
+if (loginAdmin()) {
     include_once("header/admin_header.php");
 
-    var_dump($_SESSION);
+    echo "<h1>Dobro došli</h1>";
 
-}
-else{
+} else {
     header("Location:/WebDiP/2014_projekti/WebDiP2014x043/login/403.html");
-
 }

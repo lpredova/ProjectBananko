@@ -32,10 +32,13 @@ function loginUser()
     }
 }
 
-function logged(){
+function logged()
+{
     session_start();
-    if(isset($_SESSION["TIP"])){
-        echo "loginra";
+    if (isset($_SESSION["TIP"])) {
+        return true;
+    } else {
+        return false;
     }
 
 }
