@@ -1,7 +1,6 @@
 <?php
 session_start();
 include_once("../pristup.php");
-include_once("virtualno_vrijeme.php");
 
 function procitajPomak()
 {
@@ -17,10 +16,7 @@ if (loginAdmin()) {
 
         $url = 'http://arka.foi.hr/WebDiP/pomak_vremena/pomak.xml';
         $xml = simplexml_load_file($url);
-
-        print_r($xml);
         $pomak = $xml->vrijeme[0]->pomak->brojSati;
-        echo $pomak;
         file_put_contents("vrijeme.txt", $pomak);
         echo "<h1>Virtualno vrijeme je preuzeto</h1>";
     }
