@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22.03.2015., 16:33:37
+    Author     : Kobran
+*/
+
+@media only screen and (max-width: 450px){
+    header{
+        background-image: none;
+        
+    }
+    
+    img.zaglavlje{
+        visibility: hidden;
+    }
+    
+    section#sadrzaj{
+        width: 95%;
+    }
+    
+    .osobniPodaci{
+        position: relative;
+        right: -150px;
+        top: -120px;
+    }
+    
+    .tablica{
+        visibility: hidden;
+        display: none;
+    }
+    
+    body{
+        font-family: sans-serif;
+    }
+    
+    input{
+        width: 150px;
+        height: 20px;
+    }
+}

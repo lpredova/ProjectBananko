@@ -1,0 +1,64 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22.03.2015., 17:31:12
+    Author     : Kobran
+*/
+
+@media only screen and (min-width: 451px) and (max-width: 800px){
+    .navigacija{
+        float: left;
+    }
+    
+    .navigacija1{
+        display: block;
+        width: 100px;
+    }
+    
+    #navigacija > ul li:first-child a {
+    
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top-style: none;
+}
+
+#navigacija > ul li:last-child a {
+    
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-style: none;
+}
+nav#navigacija{
+       
+    width: 100%;
+}
+
+#navigacija > ul li a{
+   
+    border-top-style: none;
+    border-left-style: dotted;
+}
+
+.osobniPodaci{
+        position: relative;
+        right: -150px;
+        top: -120px;
+    }
+    
+section#sadrzaj{
+    
+    background-color: cornsilk;
+    padding: 5px 5px;
+    margin-left: 10px;
+    width:90%;
+    float: left;
+}
+
+body{
+    font-family: Curier;
+}
+
+}

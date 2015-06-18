@@ -1,0 +1,211 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10.03.2015., 16:55:44
+    Author     : vjezbe10
+*/
+
+/* ovo je komentar */
+
+body{
+    background-color: lightsalmon;
+    
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    
+    width: 95%;
+}
+
+header{
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    color: #ffffff;
+    
+    background-color: #E4433C;
+    background-size: 250px;
+    background-image: url('logo.png');
+    background-repeat: no-repeat;
+    
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+    width: 100%;
+}
+
+nav#navigacija{
+    display: inline-block;
+    
+    padding: 5px 5px;
+    
+    width: 300px;
+    float: left;
+}
+
+#navigacija > ul{
+    list-style: none;
+    line-height: 1;
+    
+    margin: 0;
+    padding: 0;
+}
+
+#navigacija > ul li a{
+    display: block;
+    color: #E4433C;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #eaeaea;
+   
+    border-top-style: dotted;
+    border-width: 1px;
+    border-color: #000000;
+    padding: 11px 20px;
+}
+
+#navigacija > ul li:first-child a {
+    
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-top-style: none;
+}
+
+#navigacija > ul li:last-child a {
+    
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-style: none;
+}
+
+#navigacija > ul li a:hover{
+    color: #ffffff;
+    background-color: #f23f37;
+}
+
+section#sadrzaj{
+    
+    background-color: cornsilk;
+    padding: 5px 5px;
+    margin-left: 10px;
+    width:55%;
+    float: left;
+}
+
+footer{
+    width: 100%;
+    clear: both;
+    text-align: center;
+}
+
+footer > address > a:visited,
+footer > address > a{
+    color: #f23f37;
+}
+
+.gumb{
+    background: #ccc;
+    cursor: pointer;
+    margin-left: 40%;
+    width: 20%;
+}
+
+form{
+    background-color: lightsalmon;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 5px;
+    width: 98%;
+}
+
+.slika{
+    width: 50px;
+    height: 50px;
+}
+
+label{
+    margin-top: 5px;
+    text-align: left;
+
+    width: 30%;
+    clear: both;
+    float: left;
+}
+
+input{
+    width: 40%;
+    margin-top: 5px;
+}
+
+table{
+    border-collapse: inherit;
+    border-radius: 5px;
+    border-color: grey;
+    border-width: 1px;
+    border-style: solid;
+}
+
+th{
+    background: #E4433c;
+    border-style: none;
+    color: #eaeaea;
+    font-size: 12px;
+    padding: 8px;
+}
+
+td{
+    background-color: #eaeaea;
+    border-style: none;
+    color: #555555;
+    padding: 4px;
+    font-size: 12px;
+}
+
+.regSpol{
+    margin-left: 25%;
+    width: 15px;
+}
+
+.odabirSpol{
+    width: 5px;
+}
+
+.regPošta{
+    width: auto;
+    float: left;
+}
+
+checkbox.pomak{
+    position: relative;
+    left: -400px;
+}
+
+tr:hover{
+    background-color: grey;
+}
+
+td:hover{
+    background-color: chocolate !important;
+}
+
+.dijagram{
+    width: 200px;
+    height: 200px;
+}
+
+.neispravno{
+    background-color: tomato;
+}
+
+.ispravno{
+    background-color: greenyellow;
+}
+
+div{
+    background-color: aqua;
+}
