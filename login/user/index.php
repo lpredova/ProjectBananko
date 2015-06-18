@@ -2,4 +2,7 @@
 include_once("../pristup.php");
 
 
-logged();
+if(logged()){
+
+}
+echo "ja sam korisnik";
