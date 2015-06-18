@@ -41,6 +41,10 @@ include './_header.php';
     <div id="greske">
         <?php
         echo "$greske";
+        if(isset($_SESSION["pokusaj"]) and $_SESSION["pokusaj"]<3){echo "<h4>".$_SESSION["pokusaj"]."/3 </h4>";}
+        if($_SESSION["pokusaj"]>=3){
+            echo "Vas racun je zakljucan.";
+        }
         ?>
 
     </div>
