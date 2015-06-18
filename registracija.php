@@ -76,6 +76,13 @@ if (isset($_POST['registracija'])) {
         $greske .= "Unesite ono što vidite na slici!";
     }
 
+    function posaljiMail($korime,$ime,$prezime,$mail){
+        $subject = 'Aktivacija racuna';
+        $message = 'Postovani ' . $ime . ' ' . $prezime . ' ' ;
+        $message.= "Kako bi potvrdili vasu registraciju molimo Vas da kliknete na poveznicu: ttp://arka.foi.hr/WebDip/2014_projekti/WebDiP2014x043/potvrda_registracije.php?id=".$korisnik;
+        mail($mail, $subject,$message);
+    }
+
     if (empty($greske)) {
 
         $upit = "select * from korisnik where korisnicko_ime = '$korime'";
@@ -88,8 +95,8 @@ if (isset($_POST['registracija'])) {
                      values (default, '$ime', '$prezime', '$adresa', '$grad', '$zupanija', '$mail', '$datum', '$spol', '$korime', '$lozinka', 3, 1)";
             echo $upit;
             $baza->ostaliUpiti($upit);
+            posaljiMail($korime,$ime,$prezime,$mail);
         }
-
     }
 }
 $skripta = basename($_SERVER['PHP_SELF']);
