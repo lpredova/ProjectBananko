@@ -4,6 +4,7 @@ ob_start();
 $baza = new Baza();
 $greske = "";
 
+
 if (isset($_POST['registracija'])) {
 
     //var_dump($_REQUEST);
