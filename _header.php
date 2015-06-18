@@ -24,7 +24,8 @@
                    <li class="navigacija"><a href ="registracija.php" target="_self">Stranica za registraciju</a></li>
                    <li class="navigacija"><a href ="index.php" target="_self">Početna stranica</a></li>
                    <li class="navigacija"><a href ="osobna.html" target="_self">Osobna stranica</a></li>
-                   <li class="navigacija"><a href ="korisnici.html" target="_self">Stranica korisnika</a></li>    
+                   <li class="navigacija"><a href ="korisnici.html" target="_self">Stranica korisnika</a></li>
+                   <li class="navigacija"><a href ="popis.php" target="_self">Popis sajmova</a></li>
                    <li class="navigacija"><a class="navigacija1" href ="http://www.foi.unizg.hr/" target="_blank">FOI Početna</a></li>
             </ul>
         </nav>

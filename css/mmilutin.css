@@ -3,7 +3,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : 10.03.2015., 16:55:44
     Author     : vjezbe10
 */
@@ -12,13 +12,13 @@ and open the template in the editor.
 
 body{
     background-color: lightsalmon;
-    
+
     font-family: Helvetica, Arial, sans-serif;
     font-size: 13px;
-    
+
     margin-left: auto;
     margin-right: auto;
-    
+
     width: 95%;
 }
 
@@ -27,23 +27,23 @@ header{
     font-size: xx-large;
     font-weight: bold;
     color: #ffffff;
-    
+
     background-color: #E4433C;
     background-size: 250px;
     background-image: url('logo.png');
     background-repeat: no-repeat;
-    
+
     padding-top: 15px;
     padding-bottom: 15px;
-    
+
     width: 100%;
 }
 
 nav#navigacija{
     display: inline-block;
-    
+
     padding: 5px 5px;
-    
+
     width: 300px;
     float: left;
 }
@@ -51,7 +51,7 @@ nav#navigacija{
 #navigacija > ul{
     list-style: none;
     line-height: 1;
-    
+
     margin: 0;
     padding: 0;
 }
@@ -62,7 +62,7 @@ nav#navigacija{
     text-decoration: none;
     text-transform: uppercase;
     background: #eaeaea;
-   
+
     border-top-style: dotted;
     border-width: 1px;
     border-color: #000000;
@@ -70,14 +70,14 @@ nav#navigacija{
 }
 
 #navigacija > ul li:first-child a {
-    
+
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     border-top-style: none;
 }
 
 #navigacija > ul li:last-child a {
-    
+
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     border-bottom-style: none;
@@ -89,7 +89,7 @@ nav#navigacija{
 }
 
 section#sadrzaj{
-    
+
     background-color: cornsilk;
     padding: 5px 5px;
     margin-left: 10px;

@@ -2,7 +2,7 @@
 	session_start();
 	
 	if(isset($GET['id'])){
-		if = $_GET['id'];
+        $id = $_GET['id'];
 		$poruka = "";
 		
 		switch($id){

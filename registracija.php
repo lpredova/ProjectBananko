@@ -79,7 +79,7 @@ if (isset($_POST['registracija'])) {
     function posaljiMail($korime,$ime,$prezime,$mail){
         $subject = 'Aktivacija racuna';
         $message = 'Postovani ' . $ime . ' ' . $prezime . ' ' ;
-        $message.= "Kako bi potvrdili vasu registraciju molimo Vas da kliknete na poveznicu: ttp://arka.foi.hr/WebDip/2014_projekti/WebDiP2014x043/potvrda_registracije.php?id=".$korisnik;
+        $message.= "Kako bi potvrdili vasu registraciju molimo Vas da kliknete na poveznicu: http://arka.foi.hr/WebDip/2014_projekti/WebDiP2014x043/potvrda_registracije.php?id=".$korime;
         mail($mail, $subject,$message);
     }
 

@@ -2,10 +2,10 @@
 //vrijeme.txt
 	require_once('baza.class.php');
 	$db = new baza('localhost','WebDiP2014x043','admin_d4zt','WebDiP2014x043');
-	$db->connect();
+	$db->spojiDB();
 	
 	if(isset($_GET['id'])){
-		$korisnik = &_GET['id'];
+		$korisnik = $_GET['id'];
 		
 		$novovrijeme = date('Y-m-d H:i:s');
 		
