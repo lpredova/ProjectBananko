@@ -22,47 +22,58 @@ if (isset($_POST['registracija'])) {
     $posta = $_POST['posta'];
 
     if ($ime === "") {
-        $greske .= "Unesite vaše ime! ";
+        $greske .= "Unesite vaše ime! <br>";
     }
 
     if ($prezime === "") {
-        $greske .= "Unesite vaše prezime! ";
+        $greske .= "Unesite vaše prezime! <br>";
     }
 
     if ($adresa === "") {
-        $greske .= "Unesite adresu! ";
+        $greske .= "Unesite adresu! <br>";
     }
 
     if ($zupanija === "") {
-        $greske .= "Unesite županiju! ";
+        $greske .= "Unesite županiju! <br>";
     }
 
     if ($grad === "") {
-        $greske .= "Unesite grad! ";
+        $greske .= "Unesite grad! <br>";
     }
 
     if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-        $greske .= "Netočno struktirirana email adresa! ";
+        $greske .= "Netočno struktirirana email adresa! <br>";
     }
 
     if ($korime === "") {
-        $greske .= "Unesite korisničko ime! ";
+        $greske .= "Unesite korisničko ime! <br>";
     }
 
     if (!preg_match("/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$/", $lozinka)) {
-        $greske .= "Lozinka ne zadovoljava format! ";
+        $greske .= "Lozinka ne zadovoljava format! <br>";
     }
 
     if ($telefon === "") {
-        $greske .= "Unesite telefon! ";
+        $greske .= "Unesite telefon! <br>";
     }
 
     if ($spol === "") {
-        $greske .= "Odaberite spol! ";
+        $greske .= "Odaberite spol! <br>";
     }
 
     if (!($ime{0} === strtoupper($ime{0})) || !($prezime{0} === strtoupper($prezime{0})) || !($grad{0} === strtoupper($grad{0}))) {
-        $greske .= "Ime, prezime i grad moraju započeti velikim početnim slovom! <\br>";
+        $greske .= "Ime, prezime i grad moraju započeti velikim početnim slovom! <br>";
+    }
+
+    require_once('./recaptcha/recaptchalib.php');
+    $privatekey = "6LfsRwYTAAAAAJhtQh8VjZ9V9JNnAlhjshdDjcj-";
+    $resp = recaptcha_check_answer ($privatekey,
+        $_SERVER["REMOTE_ADDR"],
+        $_POST["recaptcha_challenge_field"],
+        $_POST["recaptcha_response_field"]);
+
+    if (!$resp->is_valid) {
+        $greske .= "Unesite ono što vidite na slici!";
     }
 
     if (empty($greske)) {
@@ -80,7 +91,6 @@ if (isset($_POST['registracija'])) {
         }
 
     }
-
 }
 $skripta = basename($_SERVER['PHP_SELF']);
 ?>
@@ -219,7 +229,11 @@ $skripta = basename($_SERVER['PHP_SELF']);
             <input type="checkbox" value="posta" id="posta" name="posta"/><br/>
         </div>
 
-
+        <?php
+        require_once('./recaptcha/recaptchalib.php');
+        $publickey = "6LfsRwYTAAAAAJ6cJRRKiUG9CIwCVV_eLQFSRYPz";
+        echo recaptcha_get_html($publickey);
+        ?>
         <input name="registracija" class="gumb" type="submit" value="Registriraj se"/>
         <input class="gumb" type="reset">
 
