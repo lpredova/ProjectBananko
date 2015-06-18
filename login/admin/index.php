@@ -5,7 +5,7 @@ include_once("../pristup.php");
 if (loginAdmin()) {
     include_once("header/admin_header.php");
 
-    echo "<h1>Dobro došli na administratorske stranice</h1>";
+    echo "<h3>Dobro došli na administratorske stranice</h3>";
 
     include_once("header/admin_footer.php");
 } else {

@@ -10,7 +10,7 @@ function procitajPomak()
     return intval($pomak);
 }
 
-if (loginAdmin()) {
+if (loginAdmin() and !loginMod() and !loginMod()) {
     include_once("header/admin_header.php");
     if (isset($_GET["preuzmi_vrijeme"])) {
 
@@ -21,11 +21,12 @@ if (loginAdmin()) {
         echo "<h1>Virtualno vrijeme je preuzeto</h1>";
     }
 
-    echo "<h3>Virtualno vrijeme</h3>";
-    echo "<p>Trenutno vrijeme aplikacije je " . $date = date('H:i:s', time() + 60 * 60 * procitajPomak()) . "</p>";
-    echo "<p>Pravo vrijeme je" . $date = date('H:i:s', time()) . "</p>";
-    echo "<a href='?preuzmi_vrijeme=true'>Preuzmi virtualno vrijeme</a>";
+    echo "<div class='center'><h3>Virtualno vrijeme</h3>";
+    echo "<p>Trenutno vrijeme aplikacije je <b>" . $date = date('H:i:s', time() + 60 * 60 * procitajPomak()) . "</b></p>";
+    echo "<p>Pravo vrijeme je:   <b>" . $date = date('H:i:s', time()) . "</b></p>";
+    echo "<a href='?preuzmi_vrijeme=true' class='gumb'>Preuzmi virtualno vrijeme</a></div>";
 
+    include_once("header/admin_footer.php");
 
 } else {
     header("Location:/WebDiP/2014_projekti/WebDiP2014x043/login/403.html");

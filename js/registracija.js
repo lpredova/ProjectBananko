@@ -14,7 +14,6 @@ $(document).ready(function () {
             },
             success: function (data) {
                 var json = $.parseJSON(data);
-                console.log(json["zauzet"]);
                 if (parseInt(json["zauzet"]) == 1) {
                     $("#zauzeto").text("Korisnicko ime je zauzeto!")
                 }
