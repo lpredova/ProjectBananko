@@ -1,6 +1,6 @@
 <?php
 require_once 'baza.class.php';
-$db = new baza('localhost','root','','WebDiP2014x043');
+$db = new baza('localhost','WebDiP2014x043','admin_d4zt','WebDiP2014x043');
 $db->spojiDB();
 
 $naslov = 'Popis sanmova';
