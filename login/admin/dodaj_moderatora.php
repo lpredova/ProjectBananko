@@ -12,7 +12,7 @@ if (loginAdmin() and !loginMod() and !loginMod()) {
         $sql = "INSERT INTO `sajam_has_korisnik` (`sajam_id_sajam`, `korisnik_id_korisnik`) VALUES ('" . $_POST['id_sajam'] . "', '" . $_POST['moderator'] . "');";
 
         $rezultat = $baza->ostaliUpiti($sql);
-        echo "<h3>Korisnik je dodan</h3>";
+        echo "<small>Korisnik je dodan</small>";
     }
 
 
@@ -25,7 +25,7 @@ if (loginAdmin() and !loginMod() and !loginMod()) {
     }
 
 
-    echo "<h3>Dodaj moderatora sajmu </h3>";
+    echo "<small>Dodaj moderatora sajmu </small>";
 
     echo "
             <br>
@@ -39,7 +39,7 @@ if (loginAdmin() and !loginMod() and !loginMod()) {
             <br>
             <br>
             <br>
-            <input type='submit' value='Dodaj moderatora' name='submit' class='gumb'>
+            <input type='submit' value='Dodaj moderatora' name='submit' class='gumb1'>
         </form>";
 
 

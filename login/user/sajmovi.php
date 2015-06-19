@@ -2,14 +2,25 @@
 session_start();
 include_once("../pristup.php");
 include_once("baza.class.php");
+
 $baza = new Baza();
 
 
-if (loginAdmin() and !loginMod() and !loginMod()) {
-    include_once("header/admin_header.php");
+if (loginUser() and !loginAdmin() and !loginMod()) {
+
+    $poruka = "";
+
+    if (isset($_GET["sajmovi"])) {
+
+        $sql = "INSERT INTO `sajam_has_korisnik` (`sajam_id_sajam`, `korisnik_id_korisnik`) VALUES ('" . $_GET['id_sajam'] . "', '" . $_SESSION['ID'] . "');";
+        $rezultat = $baza->ostaliUpiti($sql);
+
+        $poruka .= "<small>Korisnik" . $_SESSION['KORIME'] . "se prijavio na sajam</small>";
+    }
 
 
-    echo "<h3>Sajmovi</h3>";
+    include_once("header/user_header.php");
+    echo "<h3>Sajmovi</h3><br> $poruka";
 
     $sql = "select * from sajam";
     $rezultat = $baza->selectDB($sql);
@@ -33,17 +44,15 @@ if (loginAdmin() and !loginMod() and !loginMod()) {
         $table .= "<td>" . $red["pocetak"] . "</td>";
         $table .= "<td>" . $red["kraj"] . "</td>";
         $table .= "<td>" . $red["aktivan"] . "</td>";
-        $table .= "<td><a class='gumb1' href='/WebDiP/2014_projekti/WebDiP2014x043/login/admin/dodaj_moderatora.php?id=" . $red["id_sajam"] . "'>Dodaj moderatora</a></td>";
+        $table .= "<td><a class='gumb1' href='/WebDiP/2014_projekti/WebDiP2014x043/login/user/sajmovi.php?sajmovi=true&id_sajam=" . $red["id_sajam"] . "'>Prijavi me</a></td>";
         $table .= "<tr>";
     }
 
 
     $table .= "</tbody>";
     echo $table;
-    echo " <br><a href='/WebDiP/2014_projekti/WebDiP2014x043/login/admin/dodaj_sajam.php' class='gumb1'>Dodaj sajam</a><br><br>";
 
-    include_once("header/admin_footer.php");
-
+    include_once("header/user_header.php");
 
 } else {
     header("Location:/WebDiP/2014_projekti/WebDiP2014x043/login/403.html");

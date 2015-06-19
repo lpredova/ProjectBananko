@@ -9,6 +9,17 @@ if (loginAdmin() and !loginMod() and !loginMod()) {
     include_once("header/admin_header.php");
 
 
+    if(isset($_GET["otkljucaj"])){
+
+        $sql="UPDATE `korisnik` SET `zakljucan` = '0' WHERE `korisnik`.`id_korisnik` =".$_GET["id"]." ;";
+        $rezultat = $baza->ostaliUpiti($sql);
+        echo "<small>Korisnik je otkljucan<small>";
+
+    }
+
+
+
+
     echo "<h3>Korisnici</h3>";
 
     $sql = "select * from korisnik";
@@ -20,7 +31,8 @@ if (loginAdmin() and !loginMod() and !loginMod()) {
                 <th>Prezime</th>
                 <th>email</th>
                 <th>korisnicko ime</th>
-                <th>lozinka</th>
+                <th>Zakljucan</th>
+                <th></th>
             </thead>
             <tbody>";
 
@@ -30,7 +42,10 @@ if (loginAdmin() and !loginMod() and !loginMod()) {
         $table .= "<td>" . $red["prezime"] . "</td>";
         $table .= "<td>" . $red["email"] . "</td>";
         $table .= "<td>" . $red["lozinka"] . "</td>";
-        $table .= "<td><a class='gumb' href='/WebDiP/2014_projekti/WebDiP2014x043/login/admin/dodaj_moderatora.php?id=" . $red["id_sajam"] . "'>Otključaj korisnika</a></td>";
+        $table .= "<td>" . $red["zakljucan"] . "</td>";
+        if($red["zakljucan"]==1){
+            $table .= "<td><a class='gumb1' href='?otkljucaj=true&id=" . $red["id_korisnik"] . "'>Otključaj korisnika</a></td>";
+        }
         $table .= "<tr>";
     }
 

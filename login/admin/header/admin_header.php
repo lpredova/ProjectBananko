@@ -10,7 +10,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/WebDiP/2014_projekti/WebDiP2014x043/css/admin_stil.css"/>
+    <link rel="stylesheet" type="text/css" href="/WebDiP/2014_projekti/WebDiP2014x043/css/mmilutin.css"/>
 
 </head>
 <body>
@@ -25,7 +25,7 @@ session_start();
 
         <li>Dobro došao <?php
             echo $_SESSION["KORIME"];
-            echo $_SESSION["PREZIME"];
+            echo "&nbsp;".$_SESSION["PREZIME"];
             ?></li>
 
     </ul>

@@ -12,7 +12,7 @@ if (loginAdmin() and !loginMod() and !loginMod()) {
         $sql = "INSERT INTO `sajam` (`id_sajam`, `lokacija`, `pocetak`, `kraj`, `aktivan`)
                 VALUES (NULL, '" . $_POST['lokacija'] . "', '" . $_POST['pocetak'] . "', '" . $_POST['kraj'] . "','" . $_POST['aktivan'] . "')";
         $rezultat = $baza->ostaliUpiti($sql);
-        echo "<h3>Sajam je dodan</h3>";
+        echo "<small>Sajam je dodan</small>";
     }
 
 

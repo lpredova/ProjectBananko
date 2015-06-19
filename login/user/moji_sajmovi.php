@@ -2,16 +2,19 @@
 session_start();
 include_once("../pristup.php");
 include_once("baza.class.php");
+
 $baza = new Baza();
 
 
-if (loginAdmin() and !loginMod() and !loginMod()) {
-    include_once("header/admin_header.php");
+if (loginUser() and !loginAdmin() and !loginMod()) {
+
+    $poruka = "";
 
 
-    echo "<h3>Sajmovi</h3>";
+    include_once("header/user_header.php");
+    echo "<h3>Sajmovi</h3><br> $poruka";
 
-    $sql = "select * from sajam";
+    $sql = "select s.id_sajam,s.lokacija,s.pocetak,s.kraj from sajam s join sajam_has_korisnik shk on s.id_sajam=shk.sajam_id_sajam where shk.korisnik_id_korisnik=".$_SESSION["ID"];
     $rezultat = $baza->selectDB($sql);
 
     $table = "<table id='sajmovi'>
@@ -20,7 +23,6 @@ if (loginAdmin() and !loginMod() and !loginMod()) {
                 <th>Lokacija</th>
                 <th>Pocetak</th>
                 <th>Kraj</th>
-                <th>Aktivan</th>
                 <th>Akcija</th>
             </thead>
             <tbody>";
@@ -32,18 +34,15 @@ if (loginAdmin() and !loginMod() and !loginMod()) {
         $table .= "<td>" . $red["lokacija"] . "</td>";
         $table .= "<td>" . $red["pocetak"] . "</td>";
         $table .= "<td>" . $red["kraj"] . "</td>";
-        $table .= "<td>" . $red["aktivan"] . "</td>";
-        $table .= "<td><a class='gumb1' href='/WebDiP/2014_projekti/WebDiP2014x043/login/admin/dodaj_moderatora.php?id=" . $red["id_sajam"] . "'>Dodaj moderatora</a></td>";
+        $table .= "<td><a class='gumb1' href='/WebDiP/2014_projekti/WebDiP2014x043/login/user/sajam_detalji.php?id_sajam=" . $red["id_sajam"] . "'>Vidi detalje</a></td>";
         $table .= "<tr>";
     }
 
 
     $table .= "</tbody>";
     echo $table;
-    echo " <br><a href='/WebDiP/2014_projekti/WebDiP2014x043/login/admin/dodaj_sajam.php' class='gumb1'>Dodaj sajam</a><br><br>";
 
-    include_once("header/admin_footer.php");
-
+    include_once("header/user_header.php");
 
 } else {
     header("Location:/WebDiP/2014_projekti/WebDiP2014x043/login/403.html");

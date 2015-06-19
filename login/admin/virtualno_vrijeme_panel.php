@@ -24,7 +24,7 @@ if (loginAdmin() and !loginMod() and !loginMod()) {
     echo "<div class='center'><h3>Virtualno vrijeme</h3>";
     echo "<p>Trenutno vrijeme aplikacije je <b>" . $date = date('H:i:s', time() + 60 * 60 * procitajPomak()) . "</b></p>";
     echo "<p>Pravo vrijeme je:   <b>" . $date = date('H:i:s', time()) . "</b></p>";
-    echo "<a href='?preuzmi_vrijeme=true' class='gumb'>Preuzmi virtualno vrijeme</a></div>";
+    echo "<a href='?preuzmi_vrijeme=true' class='gumb1'>Preuzmi virtualno vrijeme</a></div>";
 
     include_once("header/admin_footer.php");
 
